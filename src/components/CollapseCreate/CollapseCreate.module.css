@@ -1,0 +1,24 @@
+.collapse-create{
+    border-bottom: 2px solid #e9ecef;
+    margin-top: 10px;
+}
+
+.collapse-list{
+    margin-right: 10px;
+}
+
+.collapse-content{
+    padding: 20px 0;
+}
+
+.collapse-label{
+    width: 30%;
+    margin-left: 0.5rem;
+    font-weight: 500;
+}
+
+.collapse-title{
+    cursor: pointer;
+    display: flex;
+}
+

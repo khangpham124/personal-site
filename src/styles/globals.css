@@ -1,0 +1,154 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+.overflow-x--hidden {
+  overflow-x: hidden;
+}
+
+#progress {
+  padding: 0;
+  list-style-type: none;
+  font-family: arial;
+  font-size: 12px;
+  line-height: 1em;
+  margin: 0 -1px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#progress li {
+  background: #0183bc;
+  color: #fff;
+  position: relative;
+  border-top: 1px solid #0183bc;
+  border-bottom: 1px solid #0183bc;
+  width: calc(20% - 5px);
+  margin: 0 1px;
+  cursor: pointer;
+}
+
+#progress li.child-item {
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+#progress > li:first-child:before {
+  content: "";
+  border-left: transparent;
+  border-top: transparent;
+  border-bottom: 16px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#progress > li:before {
+  content: "";
+  border-left: 16px solid #fff;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#progress > li:after {
+  content: "";
+  border-left: 16px solid #0183bc;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 20;
+}
+
+#progress li.active {
+  background: #005378;
+}
+
+#progress li.active:after {
+  border-left-color: #005378;
+}
+
+#progress li ul {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  /* display: none; */
+}
+
+#progress li ul li {
+  width: 100%;
+}
+
+#progress p {
+  padding: 10px 30px 10px 40px;
+}
+
+#inputUserEmail .react-multi-email {
+  height: 200px;
+}
+
+.rstm-search {
+  display: none;
+}
+
+.rstm-tree-item {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  background-color: #fff !important;
+}
+
+.rstm-tree-item--active {
+  background: #03a9fa !important;
+  color: #fff !important;
+}
+.invalid-feedback {
+  display: block;
+}
+
+.custom-table{
+  display: flex;
+  flex-flow: column;
+  height: 350px;
+}
+.custom-table thead{
+ flex: 0 0 auto;
+  width: 100%;
+}
+.custom-table tbody{
+  flex:  1 1 auto;
+  display: block;
+  overflow:  hidden auto;
+}
+.custom-table tr{
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
