@@ -87,6 +87,19 @@ const DashboardContainer = () => {
             <img src="https://teddycoder.com/assets/img/top/coder2.jpg" />
           </div>
         </div>
+        <div>
+          <div className="warpText">
+            <div className="web_desc">
+              <span className="innerText">AND NOW</span>
+            </div>
+            <div className="web_desc">
+              <span className="innerText2">I LIVE IN SAIGON</span>
+            </div>
+          </div>
+          <div className="wrapImg">
+            <img src="https://teddycoder.com/assets/img/top/coder4.jpg" />
+          </div>
+        </div>
       </Slider>
     </div>
   );

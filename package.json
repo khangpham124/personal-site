@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@hookform/error-message": "^0.0.5",
+    "@netlify/plugin-nextjs": "^4.30.0",
     "@rehooks/local-storage": "^2.4.1",
     "@stitches/react": "^0.2.5",
     "@types/react-beautiful-dnd": "^13.1.2",
