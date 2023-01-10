@@ -18,7 +18,9 @@ const AdminHome = () => {
         <meta name="description" content="AdminHome page" />
         <meta name="keywords" content="AdminHome page" />
         <link href="/theme/css/pages/signin.css" rel="stylesheet" />
-        <title>Sigin - Persect CRM</title>
+        <title>
+          Teddy Coder | Saigon Web Freelancer | Hochiminh City Web Freelancer
+        </title>
       </Head>
 
       <DefaultLayout>
