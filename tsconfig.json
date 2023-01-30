@@ -37,13 +37,14 @@
       "utils/*": [
         "src/utils/*"
       ]
-    }
+    },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/containers/Leads/routes.ts", "src/pages/customers/.indextsx"  ],
+  ],
   "exclude": [
     "node_modules"
   ]
