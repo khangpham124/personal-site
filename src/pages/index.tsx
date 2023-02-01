@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Cookies from "js-cookie";
 import DefaultLayout from "commons/Layouts/DefaultLayout";
-import DashboardContainer from "containers/Dashboard";
+import SigninContainer from "containers/Signin";
 
 const AdminHome = () => {
   const Router = useRouter();
@@ -17,28 +17,12 @@ const AdminHome = () => {
       <Head>
         <meta name="description" content="AdminHome page" />
         <meta name="keywords" content="AdminHome page" />
-        <link href="/css/signin.css" rel="stylesheet" />
-        <title>
-          Teddy Coder | Saigon Web Freelancer | Hochiminh City Web Freelancer
-        </title>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Play:400,700&amp;subset=vietnamese"
-          rel="stylesheet"
-        ></link>
+        <link href="/theme/css/pages/signin.css" rel="stylesheet" />
+        <title>Sigin - Persect CRM</title>
       </Head>
 
       <DefaultLayout>
-        <DashboardContainer />
+        <SigninContainer />
       </DefaultLayout>
     </>
   );

@@ -1,0 +1,3 @@
+export enum UIActions {
+  RESET_ACTION_STATUS = 'RESET_ACTION_STATUS',
+}

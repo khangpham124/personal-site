@@ -1,13 +1,17 @@
+import { Provider } from "react-redux";
 import "styles/index.css";
 import "styles/globals.css";
-import DefaultLayout from "commons/Layouts/DefaultLayout";
-import "../assets/style.scss";
+import configureStore from "src/state-management/configureStore";
+
+const store = configureStore();
 
 function MyApp({ Component, pageProps }) {
+  // console.log(process.env);
   return (
-    <DefaultLayout>
+    <Provider store={store}>
       <Component {...pageProps} />
-    </DefaultLayout>
+    </Provider>
   );
 }
+
 export default MyApp;
