@@ -1,0 +1,61 @@
+.footerHead {
+  @apply text-gray400 text-lg mb-1 md:mb-3;
+}
+
+.column {
+  @apply flex flex-col;
+}
+
+.column a:hover {
+  @apply text-extraHover underline;
+  transition: 0.3s;
+}
+
+.footerContainer {
+  @apply lg:py-16 py-24px;
+}
+
+.footerContents {
+  @apply flex flex-col md:flex-row justify-between;
+}
+
+.footerContainer > div {
+  @apply mb-6 md:mb-0;
+}
+
+.bottomFooter {
+  @apply border-t-[1px] py-16px border-[#c3c3c3] text-center lg:mx-40px mx-20px;
+}
+
+.bottomFooter a {
+  @apply ml-4;
+}
+.inputEmail {
+  width: 326px;
+  border-color: #e7e7e7;
+}
+@media (max-width: 640px) {
+  .inputEmail {
+    width: 200px;
+  }
+  .btnRegister {
+    width: fit-content;
+    margin-top: 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 400px) {
+  .inputEmail {
+    width: 160px;
+  }
+}
+.inputEmail::placeholder {
+  color: #c3c3c3;
+}
+.socialItem:hover svg path {
+  fill: #ffa096;
+  transition: 0.3s;
+}

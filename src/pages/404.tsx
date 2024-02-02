@@ -1,45 +1,36 @@
-// export default function _404() {
-//   return <h1>404 - Page Not Found</h1>;
-// }
-import React, { useEffect } from "react";
-import Head from "next/head";
-import dynamic from "next/dynamic";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
-import DashboardLayout from "commons/Layouts/Dashboard";
-import LoadingIndicator from "components/LoadingIndicator";
-import LeadsContainer from "containers/Leads";
-import HeaderContainer from "commons/Headers";
-import SidebarContainer from "commons/Sidebar";
-import withAuth from "utils/hoc/withAuth";
-import { useRouter } from "next/router";
+import { GetStaticProps } from 'next';
 
-const DynamicImportScript = dynamic(
-  () => import("containers/Dashboard/importScript"),
-  { loading: () => <LoadingIndicator />, ssr: false }
-);
+import NOTFOUND from '@/public/assets/bg-img/404.svg';
 
-const PageNotfound = () => {
-  const router = useRouter();
-  const linkTo = String(router.query.company);
-  const arrylinkTo = ["leads", "customers", "projects", "products", "setting"];
-  if (arrylinkTo.includes(linkTo)) {
-    router.replace("404");
-  }
-
+const Custom404 = () => {
+  const t = useTranslations('Others');
   return (
     <>
-      <Head>
-        <meta name="description" content="Dashboard page" />
-        <meta name="keywords" content="Dashboard page" />
-      </Head>
-
-      <DashboardLayout>
-        <HeaderContainer></HeaderContainer>
-        <SidebarContainer></SidebarContainer>
-        <div>404 - Page not found</div>
-      </DashboardLayout>
-      <DynamicImportScript />
+      <div className="flex flex-col h-screen justify-center items-center">
+        <h1 className="text-2xl">{t('page_not_found')}</h1>
+        <Image src={NOTFOUND} alt="404 Page Not Found" width={400} height={300} />
+        <span className="text-gray400">
+          {t('go_back_to')}{' '}
+          <Link href="/">
+            <a className="underline font-bold hover:text-gray500">{t('home_page')}</a>
+          </Link>
+          ?
+        </span>
+      </div>
     </>
   );
 };
-export default withAuth(PageNotfound);
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      messages: (await import(`@/messages/common/${locale}.json`)).default,
+    },
+  };
+};
+
+export default Custom404;

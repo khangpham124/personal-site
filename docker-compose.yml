@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  web-ju-clothing-website:
+    build: .
+    command: npm run start
+    # volumes:
+    #   - .:/data/www/ju-dashboard-frontend/node_modules
+    ports:
+      - "10009:3000"

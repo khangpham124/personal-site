@@ -1,0 +1,25 @@
+.card {
+  width: 100%;
+}
+
+.imageContainer {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.addBtn:focus {
+  @apply bottom-8 duration-75;
+}
+
+.card:hover .addBtn {
+  @apply md:bottom-8;
+}
+
+.itemName {
+  @apply lg:text-[48px] text-[38px] text-[#000] font-italianno text-center md:mt-24px mt-[8px];
+  font-weight: 400;
+  line-height: 60px;
+  text-align: center;
+}

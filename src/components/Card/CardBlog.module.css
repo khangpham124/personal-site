@@ -1,0 +1,42 @@
+.card {
+  width: 25%;
+  padding: 10px;
+}
+
+.card:first-child {
+  width: 50%;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1px;
+}
+
+.thumbWrap {
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.card:first-child .thumbWrap {
+  height: 0;
+  padding-bottom: 80%;
+  overflow: hidden;
+}
+
+.addBtn:focus {
+  @apply bottom-8 duration-75;
+}
+
+.card:hover .addBtn {
+  @apply md:bottom-8;
+}
+
+.itemName {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+}

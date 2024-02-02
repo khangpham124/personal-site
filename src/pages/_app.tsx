@@ -1,17 +1,46 @@
-import { Provider } from "react-redux";
-import "styles/index.css";
-import "styles/globals.css";
-import configureStore from "src/state-management/configureStore";
+import { NextComponentType, NextPageContext } from 'next';
+import Router from 'next/router';
+import NProgress from 'nprogress';
+import { NextIntlProvider } from 'next-intl';
+import { ProvideAuth } from '@/context/AuthContext';
+import { ProvideCart } from '@/context/cart/CartProvider';
+import { ProvideWishlist } from '@/context/wishlist/WishlistProvider';
+import { QueryClient, QueryClientProvider, Hydrate } from "@tanstack/react-query";
 
-const store = configureStore();
+import '@/styles/globals.css';
+import 'animate.css';
+import 'nprogress/nprogress.css';
 
-function MyApp({ Component, pageProps }) {
-  // console.log(process.env);
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
+
+type AppCustomProps = {
+  Component: NextComponentType<NextPageContext, any, {}>;
+  pageProps: any;
+  cartState: string;
+  wishlistState: string;
+};
+
+const MyApp = ({ Component, pageProps }: AppCustomProps) => {
+  const queryClient = new QueryClient();
+
   return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
+    <NextIntlProvider messages={pageProps?.messages}>
+      <QueryClientProvider client={queryClient}>
+        <ProvideAuth>
+          <ProvideWishlist>
+            <ProvideCart>
+              <Hydrate state={pageProps.dehydratedState}>
+                <Component {...pageProps} />
+              </Hydrate>
+            </ProvideCart>
+          </ProvideWishlist>
+        </ProvideAuth>
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      </QueryClientProvider>
+    </NextIntlProvider>
   );
-}
+};
 
 export default MyApp;

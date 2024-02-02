@@ -1,36 +1,107 @@
 module.exports = {
-  purge: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/commons/**/*.{js,ts,jsx,tsx}',
-    './src/containers/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}'
-  ],
-  darkMode: false, // or 'media' or 'class'
+  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      xs: '480px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      xxl: '1536px',
+    },
+    fontFamily: {
+      italianno: ['Italianno'],
+      PlusJakartaSansBoldItalic: ['PlusJakartaSansBoldItalic'],
+      PlusJakartaSansBold: ['PlusJakartaSansBold'],
+      PlusJakartaSansItalic: ['PlusJakartaSansItalic'],
+      PlusJakartaSansMediumItalic: ['PlusJakartaSansMediumItalic'],
+      PlusJakartaSansSemiBoldItalic: ['PlusJakartaSansSemiBoldItalic'],
+      PlusJakartaSansSemiBold: ['PlusJakartaSansSemiBold'],
+      PlusJakartaSansMedium: ['PlusJakartaSansMedium'],
+      PlusJakartaSansRegular: ['PlusJakartaSansRegular'],
+    },
+    fontSize: {
+      xs: '12px',
+      sm: '14px',
+      base: '14px',
+      lg: '16px',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
+      '6xl': '3.75rem',
+      '7xl': '4.5rem',
+      '8xl': '6rem',
+      '9xl': '8rem',
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+
+      main: '#FE7B6D',
+      extra: '#FF8D82',
+      extraHover: '#FFA096',
+      mainLight: '#FEF3F2',
+      mainLight100: '#FCE0DC',
+      mainLight200: '#FED4C4',
+      black100: '#030303',
+      black200: '#626262',
+      black300: '#333333',
+      black400: '#9e9e9e',
+      grayLight: '#e6e6e6',
+
+      white: '#FFFFFF',
+      gray100: '#EEEEEE',
+      gray200: '#ECECEC',
+      gray300: '#C1C1C1',
+      gray400: '#686868',
+      gray500: '#282828',
+      gray600: '#060606',
+      gray700: '#333333',
+      red: '#F05454',
+      yellow: '#F5B461',
+      green: '#9BDEAC',
+      blue: '#66BFBF',
+      lightgreen: '#F2FDFB',
+    },
     extend: {
-      colors: {
-        'light-grey': '#f4f4f2'
-      }
+      padding: {
+        0: '0',
+        '8px': '8px',
+        '10px': '10px',
+        '12px': '12px',
+        '14px': '14px',
+        '16px': '16px',
+        '18px': '18px',
+        '20px': '20px',
+        '24px': '24px',
+        '32px': '32px',
+        '40px': '40px',
+      },
+      margin: {
+        '0px': '0px',
+        '8px': '8px',
+        '10px': '10px',
+        '12px': '12px',
+        '14px': '14px',
+        '16px': '16px',
+        '18px': '18px',
+        '20px': '20px',
+        '24px': '24px',
+        '32px': '32px',
+        '40px': '40px',
+      },
+      width: {
+        full: '100%',
+        fit: 'fit-content',
+      },
+      height: {
+        full: '100%',
+        fit: 'fit-content',
+        38: '38px',
+      },
     },
-    zIndex: {
-      0: 0,
-      10: 10,
-      20: 20,
-      30: 30,
-      40: 40,
-      50: 50,
-      25: 25,
-      50: 50,
-      75: 75,
-      100: 100,
-      1000: 1000,
-      1001: 1001,
-      auto: 'auto'
-    },
-    maxHeaderSize: '70px'
   },
-  variants: {
-    extend: {}
-  },
-  plugins: []
+  plugins: [],
 };

@@ -1,0 +1,35 @@
+[
+  {
+    "id": 2,
+    "image": "https://img.freepik.com/free-photo/fashionable-pale-brunette-long-green-dress-black-jacket-sunglasses-standing-street-during-daytime-against-wall-light-city-building_197531-24468.jpg?w=1380&t=st=1690870740~exp=1690871340~hmac=1028b4ddcaf7923ca857a3df15114250e9f93b92415b20e35855d4d630e6e6af",
+    "imageTablet": "https://images.pexels.com/photos/6567239/pexels-photo-6567239.jpeg?cs=srgb&dl=pexels-tim-douglas-6567239.jpg&fm=jpg",
+    "imageMobile": "https://images.pexels.com/photos/6567239/pexels-photo-6567239.jpeg?cs=srgb&dl=pexels-tim-douglas-6567239.jpg&fm=jpg",
+    "subtitle": "Day dreaming",
+    "titleUp": "Nằm mộng giữa ban ngày",
+    "desc": "Lấy cảm hứng từ nét đẹp dịu dàng của nắng, sự phóng khoáng tự do của hoa cỏ mùa Hạ, mang đậm hơi thở thiên nhiên với các sắc màu Neutral Pastel ngọt ngào",
+    "titleDown": "Dresses",
+    "rightText": false
+  },
+  {
+    "id": 1,
+    "image": "https://img.freepik.com/free-photo/clothes-store-with-mannequin_23-2148929527.jpg?w=1380&t=st=1690870769~exp=1690871369~hmac=2fda6732875a7565e08ab9813e1b04eb20bc26b965023ac9b3bd6a43f391ffc7",
+    "imageTablet": "https://images.pexels.com/photos/6567239/pexels-photo-6567239.jpeg?cs=srgb&dl=pexels-tim-douglas-6567239.jpg&fm=jpg",
+    "imageMobile": "https://images.pexels.com/photos/6567239/pexels-photo-6567239.jpeg?cs=srgb&dl=pexels-tim-douglas-6567239.jpg&fm=jpg",
+    "subtitle": "Day dreaming",
+    "titleUp": "Nằm mộng giữa ban ngày",
+    "desc": "Lấy cảm hứng từ nét đẹp dịu dàng của nắng, sự phóng khoáng tự do của hoa cỏ mùa Hạ, mang đậm hơi thở thiên nhiên với các sắc màu Neutral Pastel ngọt ngào",
+    "titleDown": "Dresses",
+    "rightText": true
+  },
+  {
+    "id": 3,
+    "image": "https://img.freepik.com/free-photo/beauty-blond-woman-chair_155003-474.jpg?w=1380&t=st=1690870812~exp=1690871412~hmac=1ba351584bea0263f391864e018d1bb85ce7f2db057d1ffdb34e53e0d1696f3e",
+    "imageTablet": "https://images.pexels.com/photos/6567239/pexels-photo-6567239.jpeg?cs=srgb&dl=pexels-tim-douglas-6567239.jpg&fm=jpg",
+    "imageMobile": "https://images.pexels.com/photos/6567239/pexels-photo-6567239.jpeg?cs=srgb&dl=pexels-tim-douglas-6567239.jpg&fm=jpg",
+    "subtitle": "Day dreaming",
+    "titleUp": "Nằm mộng giữa ban ngày",
+    "desc": "Lấy cảm hứng từ nét đẹp dịu dàng của nắng, sự phóng khoáng tự do của hoa cỏ mùa Hạ, mang đậm hơi thở thiên nhiên với các sắc màu Neutral Pastel ngọt ngào",
+    "titleDown": "Promotions",
+    "rightText": false
+  }
+]

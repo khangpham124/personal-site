@@ -1,0 +1,126 @@
+/* Top Bar */
+.topNav {
+  @apply bg-[#FACDC8] hidden h-38 lg:flex justify-center items-center;
+}
+.topNav__item {
+  @apply flex justify-center items-center max-w-7xl mx-auto py-8px text-base;
+}
+.topLeftMenu {
+  @apply ml-8;
+}
+
+.topLeftMenu li {
+  @apply text-xs my-2 mr-4;
+}
+
+.topRightMenu li {
+  @apply text-xs my-2 ml-4;
+}
+.topRightMenu li div a {
+  @apply text-lg flex items-center;
+}
+
+/* Main Menu */
+
+.leftMenu li {
+  @apply text-sm mr-16px hidden lg:block whitespace-nowrap cursor-pointer;
+}
+
+.leftMenu li .menuItem:hover > a {
+  @apply ease-in duration-100;
+}
+.leftMenu li:hover .menuItemIcon svg path {
+  @apply ease-in duration-100;
+  fill: #ffa096;
+}
+
+.leftMenu li:hover > .menuItem a {
+  @apply text-gray400;
+  color: #ffa096;
+}
+
+.leftMenu li:last-child {
+  @apply mr-0;
+}
+
+.rightMenu li {
+  @apply lg:ml-24px lg:flex block items-center;
+}
+
+.menuMobile .hoverable {
+  position: relative;
+}
+.hoverable {
+  position: static;
+}
+
+.megaMenu li:last-child {
+  @apply mb-0;
+}
+
+.hoverable:hover .megaMenu {
+  opacity: 1;
+  visibility: visible;
+  top: 80px;
+  transition: 0.3s;
+}
+
+.displayMegaMenu .megaMenu {
+  opacity: 1 !important;
+  visibility: visible !important;
+  top: 65px !important;
+  transition: 0.3s !important;
+}
+.megaMenu {
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  position: absolute;
+  top: 90px;
+  text-align: left;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.rightMenu__item svg:hover path {
+  fill: #ffa096;
+}
+.menuMobile {
+  @apply relative z-[100];
+}
+.menuMobile .rightMenu .rightMenu__item:last-child {
+  @apply ml-24px;
+}
+.menuMobile .menuExpandMobile {
+  padding: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 60px;
+  z-index: 1000;
+}
+.menuMobile .menuExpandMobile li {
+  @apply border-b-[1px] p-20px;
+  border-color: #f6f3f3;
+}
+.menuMobile .menuExpandMobile .megaMenu ul li {
+  padding: 10px 20px;
+  padding-left: 46px;
+}
+.menuExpandMobile__bottom li {
+  border: 0 !important;
+  margin: 0 !important;
+}
+.activeNavigation > div > a {
+  color: #ffa096 !important;
+}
+
+.activeNavigation .menuItemIcon svg path {
+  @apply ease-in duration-100;
+  fill: #ffa096;
+}
+
+.activeNavigationChild > a {
+  color: #ffa096 !important;
+}

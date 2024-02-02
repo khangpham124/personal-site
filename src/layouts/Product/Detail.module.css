@@ -1,0 +1,36 @@
+.mySwiper {
+  @apply md:ml-[160px];
+}
+.mySwiper [class~='swiper-button-prev']::after,
+.mySwiper [class~='swiper-button-next']::after {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  background-color: #e7e7e7 !important;
+  margin: 0;
+}
+.mySwiper [class~='swiper-button-prev']::after {
+  margin-right: 23px !important;
+}
+.mySwiper [class~='swiper-button-next']::after {
+  margin-left: 23px !important;
+}
+.mySwiper_2 {
+  @apply md:absolute md:w-[150px] top-0 left-0 z-[1] overflow-hidden md:h-[100%];
+}
+.imageContainer {
+  width: 100%;
+  height: auto !important;
+}
+
+.imageContainer > span {
+  position: unset !important;
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+

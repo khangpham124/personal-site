@@ -1,0 +1,39 @@
+.centerTextSection {
+  @apply absolute flex w-full flex-col items-center top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%];
+}
+
+.titleUp {
+  @apply lg:text-[96px] md:text-[80px] text-[50px] font-italianno text-white lg:leading-[120px] leading-[40px] text-center;
+}
+
+.subtitle {
+  @apply md:text-[56px] text-[40px] font-italianno text-white my-8px md:leading-[70px] leading-[40px];
+}
+
+.desc {
+  @apply md:text-[20px] text-[16px] text-white md:max-w-4xl w-[80%] text-center md:leading-[27.24px] leading-[24px];
+}
+
+.arrows {
+  @apply w-8 h-8 absolute cursor-pointer flex justify-center items-center bg-gray300 rounded-full opacity-60 hover:opacity-100;
+}
+.sliderWrapper :global(.swiper-pagination-bullet) {
+  background: #efefef;
+  width: 12px;
+  height: 12px;
+  border-radius: 0.5rem;
+  opacity: 1;
+}
+
+.sliderWrapper :global(.swiper-pagination-bullet-active) {
+  background-color: #fbd6d2;
+  width: 55px;
+  height: 8px;
+  border-radius: 0.5rem;
+}
+.sliderWrapper [class~='swiper-pagination'] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}

@@ -1,0 +1,6 @@
+.title {
+  @apply mt-[54px];
+}
+.title:first-child {
+  @apply mt-[0px];
+}

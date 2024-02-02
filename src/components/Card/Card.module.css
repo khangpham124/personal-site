@@ -1,0 +1,42 @@
+.card {
+  width: 100%;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1px;
+}
+
+.iconLike {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.addBtn:focus {
+  @apply bottom-8 duration-75;
+}
+
+.card:hover .addBtn {
+  @apply md:bottom-8;
+}
+
+.itemName {
+  @apply text-[24px] text-[#000] font-italianno text-center;
+  font-weight: 400;
+  line-height: 30px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  word-break: break-word;
+}
+.ShoppingCard a span {
+  height: 100% !important;
+}
+.cardShopping {
+  @apply py-24px;
+}
+.cardShopping:first-child {
+  @apply pt-0;
+}
