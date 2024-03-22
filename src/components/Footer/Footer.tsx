@@ -20,6 +20,7 @@ export default function Footer() {
   return (
     <>
       <div
+        id="footer"
         className={`${styles.footerContainer} ${
           route !== HOME ? "border-t-[1px] border-[#e6e6e6]" : "border-0"
         } `}
@@ -34,22 +35,6 @@ export default function Footer() {
             <span className="text-center  text-base">
               {t("newsletter_desc")}
             </span>
-            <div className="mt-16px flex w-full sm:w-auto sm:flex-row">
-              <Input
-                placeholder={t("email_of_you")}
-                name="email"
-                type="email"
-                extraClass={`${styles.inputEmail} sm:w-auto border-[#e7e7e7] border-[1px]`}
-              />
-              <Button
-                size="lg"
-                value={t("register")}
-                extraClass={classNames(
-                  "bg-[#000] px-4 whitespace-nowrap w-[106px] h-[48px] p-0 h-[46px] ml-0 mt-4 sm:mt-0 tracking-widest sm:tracking-normal sm:mt-0 w-auto w-full sm:w-auto text-white",
-                  [`${styles.btnRegister}`]
-                )}
-              />
-            </div>
             <div className="flex items-center mt-16px">
               <Link href={"#"}>
                 <a className={styles.socialItem}>
@@ -69,11 +54,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.bottomFooter}>
-        <span className="text-[14px] font-PlusJakartaSansMedium text-[#000000]">
-          &copy; {t("all_rights_reserved")}
-        </span>
       </div>
     </>
   );
