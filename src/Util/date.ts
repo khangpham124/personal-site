@@ -1,10 +1,10 @@
 import moment, { Moment } from 'moment';
 
 export const digitNumber = (n: number | string) => {
-  if (n < 0) {
+  if (Number(n) < 0) {
     return 0;
   }
-  return n < 10 ? '0' + n : n;
+  return Number(n) < 10 ? '0' + n : n;
 };
 
 export const countdownTime = (
