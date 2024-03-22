@@ -1,8 +1,8 @@
-import useWindowSize from '@/hooks/useWindowSize';
-import { useEffect, useState } from 'react';
-import MenuMobile from './MenuMobile';
-import MainMenu from './MainMenu';
-import TopNav from './TopNav';
+import useWindowSize from "@/hooks/useWindowSize";
+import { useEffect, useState } from "react";
+import MenuMobile from "./MenuMobile";
+import MainMenu from "./MainMenu";
+import TopNav from "./TopNav";
 
 type Props = {};
 
@@ -21,10 +21,14 @@ const Header: React.FC<Props> = () => {
   return (
     <>
       {/* ===== Top Navigation ===== */}
-      <TopNav />
+      {/* <TopNav /> */}
 
       {/* ===== Main Navigation ===== */}
-      {size.width > 1024 ? <MainMenu isMobile={isMobile} /> : <MenuMobile isMobile={isMobile} />}
+      {size.width > 1024 ? (
+        <MainMenu isMobile={isMobile} />
+      ) : (
+        <MenuMobile isMobile={isMobile} />
+      )}
     </>
   );
 };

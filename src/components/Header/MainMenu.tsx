@@ -1,21 +1,21 @@
-import ArrowDownIcon from '@/public/assets/icons/ArrowDownIcon';
-import USER_ICON from '@/public/assets/icons/icon_user.png';
+import ArrowDownIcon from "@/public/assets/icons/ArrowDownIcon";
+import USER_ICON from "@/public/assets/icons/icon_user.png";
 
-import LOGO from '@/public/assets/logo-ju.png';
-import { Menu } from '@headlessui/react';
-import classNames from 'classnames';
-import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useCallback, useEffect, useState } from 'react';
-import AuthForm from '../Auth/AuthForm';
-import CartItem from '../CartItem/CartItem';
-import SearchForm from '../SearchForm/SearchForm';
-import styles from './Header.module.css';
-import { MyLink } from './MyLink';
-import Navigation from './Navigation';
-import { useAuth } from '../../context/AuthContext';
+import LOGO from "@/public/assets/logo-ju.png";
+import { Menu } from "@headlessui/react";
+import classNames from "classnames";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useCallback, useEffect, useState } from "react";
+import AuthForm from "../Auth/AuthForm";
+import CartItem from "../CartItem/CartItem";
+import SearchForm from "../SearchForm/SearchForm";
+import styles from "./Header.module.css";
+import { MyLink } from "./MyLink";
+import Navigation from "./Navigation";
+import { useAuth } from "../../context/AuthContext";
 
 type Props = {
   isMobile: boolean;
@@ -23,7 +23,7 @@ type Props = {
 
 const MainMenu: React.FC<Props> = () => {
   const auth = useAuth();
-  const t = useTranslations('Navigation');
+  const t = useTranslations("Navigation");
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [didMount, setDidMount] = useState<boolean>(false); // to disable Can't perform a React state Warning
   const router = useRouter();
@@ -40,10 +40,10 @@ const MainMenu: React.FC<Props> = () => {
 
   useEffect(() => {
     setDidMount(true);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
       setDidMount(false);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
 
@@ -55,10 +55,13 @@ const MainMenu: React.FC<Props> = () => {
     <>
       {/* ===== Main Navigation ===== */}
       <nav
-        className={classNames('w-full z-50 h-20 relative bg-white lg:px-40px px-20px', {
-          'bg-white sticky top-0 shadow-md z-50': scrolled,
-          'bg-transparent': !scrolled,
-        })}
+        className={classNames(
+          "w-full z-50 h-20 relative bg-white lg:px-40px px-20px",
+          {
+            "bg-white sticky top-0 shadow-md z-50": scrolled,
+            "bg-transparent": !scrolled,
+          }
+        )}
       >
         <div className="w-full flex items-center justify-between h-full">
           <div className={`w-full flex justify-between align-baseline h-full`}>
@@ -67,13 +70,9 @@ const MainMenu: React.FC<Props> = () => {
               <div className="w-[182px] flex items-center">
                 <Link href="/">
                   <a className="w-[182px]">
-                    <Image
-                      className="justify-center"
-                      src={LOGO}
-                      alt="Ju Clothing"
-                      width={182}
-                      height={58}
-                      layout="responsive"
+                    <img
+                      src={`https://teddycoder.com/assets/img/header/logo.svg`}
+                      alt="Our Shop"
                     />
                   </a>
                 </Link>
@@ -81,7 +80,9 @@ const MainMenu: React.FC<Props> = () => {
             </div>
 
             {/* Left Nav */}
-            <ul className={`flex-0 lg:flex-1 flex justify-center ${styles.leftMenu}`}>
+            <ul
+              className={`flex-0 lg:flex-1 flex justify-center ${styles.leftMenu}`}
+            >
               <Navigation />
             </ul>
 
@@ -94,7 +95,12 @@ const MainMenu: React.FC<Props> = () => {
                 {auth.user ? (
                   <Link href="/profile">
                     <a>
-                      <Image src={USER_ICON} alt="icon" width={20} height={20} />
+                      <Image
+                        src={USER_ICON}
+                        alt="icon"
+                        width={20}
+                        height={20}
+                      />
                     </a>
                   </Link>
                 ) : (
@@ -102,7 +108,6 @@ const MainMenu: React.FC<Props> = () => {
                     <Image src={USER_ICON} alt="icon" width={20} height={20} />
                   </AuthForm>
                 )}
-                
               </li>
               <li className={styles.rightMenu__item}>
                 <CartItem />
@@ -111,7 +116,7 @@ const MainMenu: React.FC<Props> = () => {
                 <li>
                   <Menu as="div" className="relative">
                     <Menu.Button as="a" href="#" className="flex text-16px">
-                      {locale === 'en' ? t('eng') : t('vi')} <ArrowDownIcon />
+                      {locale === "en" ? t("eng") : t("vi")} <ArrowDownIcon />
                     </Menu.Button>
                     <Menu.Items
                       className="flex flex-col right-0 absolute p-1 border border-gray200 bg-white mt-2 outline-none"
@@ -120,14 +125,14 @@ const MainMenu: React.FC<Props> = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <MyLink active={active} href={asPath} locale="en">
-                            {t('eng')}
+                            {t("eng")}
                           </MyLink>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <MyLink active={active} href={asPath} locale="vi">
-                            {t('vi')}
+                            {t("vi")}
                           </MyLink>
                         )}
                       </Menu.Item>
