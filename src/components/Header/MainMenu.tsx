@@ -56,9 +56,9 @@ const MainMenu: React.FC<Props> = () => {
       {/* ===== Main Navigation ===== */}
       <nav
         className={classNames(
-          "w-full z-50 h-20 relative bg-white lg:px-40px px-20px",
+          "w-full z-50 h-20 fixed top-0 left-0 right-0 lg:px-40px px-20px",
           {
-            "bg-white sticky top-0 shadow-md z-50": scrolled,
+            "top-0 shadow-md z-50": scrolled,
             "bg-transparent": !scrolled,
           }
         )}
@@ -80,66 +80,8 @@ const MainMenu: React.FC<Props> = () => {
             </div>
 
             {/* Left Nav */}
-            <ul
-              className={`flex-0 lg:flex-1 flex justify-center ${styles.leftMenu}`}
-            >
+            <ul className={`naviBar ${styles.leftMenu}`}>
               <Navigation />
-            </ul>
-
-            {/* Right Nav */}
-            <ul className={`flex-1 flex justify-end ${styles.rightMenu}`}>
-              <li className={styles.rightMenu__item}>
-                <SearchForm />
-              </li>
-              <li className={styles.rightMenu__item}>
-                {auth.user ? (
-                  <Link href="/profile">
-                    <a>
-                      <Image
-                        src={USER_ICON}
-                        alt="icon"
-                        width={20}
-                        height={20}
-                      />
-                    </a>
-                  </Link>
-                ) : (
-                  <AuthForm>
-                    <Image src={USER_ICON} alt="icon" width={20} height={20} />
-                  </AuthForm>
-                )}
-              </li>
-              <li className={styles.rightMenu__item}>
-                <CartItem />
-              </li>
-              <ul className={`flex ${styles.topRightMenu} list-lang ml-24px`}>
-                <li>
-                  <Menu as="div" className="relative">
-                    <Menu.Button as="a" href="#" className="flex text-16px">
-                      {locale === "en" ? t("eng") : t("vi")} <ArrowDownIcon />
-                    </Menu.Button>
-                    <Menu.Items
-                      className="flex flex-col right-0 absolute p-1 border border-gray200 bg-white mt-2 outline-none"
-                      style={{ zIndex: 9999 }}
-                    >
-                      <Menu.Item>
-                        {({ active }) => (
-                          <MyLink active={active} href={asPath} locale="en">
-                            {t("eng")}
-                          </MyLink>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <MyLink active={active} href={asPath} locale="vi">
-                            {t("vi")}
-                          </MyLink>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Menu>
-                </li>
-              </ul>
             </ul>
           </div>
         </div>
