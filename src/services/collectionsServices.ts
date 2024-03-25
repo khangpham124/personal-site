@@ -1,7 +1,7 @@
 import { CollectionsServices , QueryObject } from '@/interfaces/collection-service';
 import http from '@/lib/http';
 
-export const API_PREFIX = 'https://api.juclothing.com/api/jusystem';
+export const API_PREFIX = 'https://teddycoder.com/wp-json/wp/v2';
 export const ARTICLE_BASE_URL = `/customer/orders`;
 import { catchAxiosError } from './instance';
 import HttpClient from './instance';
