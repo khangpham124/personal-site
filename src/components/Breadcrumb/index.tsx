@@ -1,7 +1,7 @@
-import classNames from 'classnames';
-import Link from 'next/link';
-import React from 'react';
-import { Else, If, Then } from 'react-if';
+import classNames from "classnames";
+import Link from "next/link";
+import React from "react";
+import { Else, If, Then } from "react-if";
 
 type Breadcrumb = {
   title: string;
@@ -15,16 +15,7 @@ type Props = {
 function Breadcrumb({ breadcrumbs, border }: Props) {
   return (
     <nav
-      className={classNames(
-        'w-full lg:mt-0 mt-20px',
-        {
-          'flex mx-auto w-[calc(100%-80px)] border-t-[1px] border-[#c3c3c3] pt-24px md:pb-[32px] md:px-[40px] px-[20px]':
-            border,
-        },
-        {
-          'mb-16px': !border,
-        }
-      )}
+      className={classNames("w-full lg:mt-0 mt-20px")}
       aria-label="Breadcrumb"
     >
       <ol className="inline-flex flex-wrap items-center">

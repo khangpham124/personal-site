@@ -5,26 +5,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-import policy_1 from "@/public/assets/icons/policy-1.png";
-import policy_2 from "@/public/assets/icons/policy-2.png";
-import policy_3 from "@/public/assets/icons/policy-3.png";
-import policy_4 from "@/public/assets/icons/policy-4.png";
 import styles from "./Home.module.css";
-import flash_sale from "@/public/assets/icons/icon-flashsale.png";
-import imagesIns from "@/fixtures/instagrams.json";
-import Slideshow from "@/components/HeroSection/Slideshow";
-import moment from "moment";
-import CardSale from "@/components/Card/CardSale";
-import CardSaleTitle from "@/components/Card/CardSaleTitle";
+
 import { IProductStore } from "@/interfaces/customerProduct-service";
 import { useContentWeb } from "@/hooks/useContentWeb";
 import { useLastestCollections } from "@/hooks/useCollections";
-import { ICollection } from "@/interfaces/collection-service";
 import { itemAPI } from "@/services/customerItems";
 import { postAPI } from "@/services/customerArticles";
 import { IArticle } from "@/interfaces/customerArticles-service";
-import { BLOG } from "@/constants/routes";
 import Vivus from "vivus";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 type ImagesIns = {
   id: number;
@@ -46,6 +39,9 @@ const HomeLayout = ({ products }: any) => {
   const collections = useLastestCollections();
   const collectionsArr = collections?.data?.data;
 
+  const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
+
   useEffect(() => {
     // sevicesitemAPI.getProductInHot(1).then((res: any) => {
     //   setCurrentItems(res.data.data);
@@ -59,20 +55,19 @@ const HomeLayout = ({ products }: any) => {
     // sevicesPostAPI.getPostbyHomepage().then((res: any) => {
     //   setPostHome(res.data.data);
     // });
-
-    new Vivus("hi-there", {
-      type: "scenario",
-      duration: 200,
-      start: "autostart",
-      dashGap: 150,
-      forceRender: false,
-    });
+    // new Vivus("hi-there", {
+    //   type: "scenario",
+    //   duration: 200,
+    //   start: "autostart",
+    //   dashGap: 150,
+    //   forceRender: false,
+    // });
   }, []);
 
   return (
     <>
       <div id="teddy_slide">
-        <svg
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
@@ -185,11 +180,36 @@ const HomeLayout = ({ products }: any) => {
                         C83.6,102.6,83.6,81.1,83.6,81.1z"
             />
           </g>
-        </svg>
-        <img
-          src={`https://teddycoder.com/assets/img/top/coder1.jpg`}
-          alt="Our Shop"
-        />
+        </svg> */}
+
+        <Slider
+          // ref={(slider2) => setNav2(slider2 as any)}
+          slidesToShow={1}
+          swipeToSlide={true}
+          focusOnSelect={true}
+          arrows={false}
+          vertical={true}
+          fade={true}
+        >
+          <div key={`slide_1`}>
+            <img
+              src={`https://teddycoder.com/assets/img/top/coder1.jpg`}
+              alt="Our Shop"
+            />
+          </div>
+          <div key={`slide_1`}>
+            <img
+              src={`https://teddycoder.com/assets/img/top/coder3.jpg`}
+              alt="Our Shop"
+            />
+          </div>
+          <div key={`slide_1`}>
+            <img
+              src={`https://teddycoder.com/assets/img/top/coder2.jpg`}
+              alt="Our Shop"
+            />
+          </div>
+        </Slider>
       </div>
     </>
   );

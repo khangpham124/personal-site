@@ -1,15 +1,15 @@
-import { Meta } from '@/components/Meta';
-import { AppConfig } from '@/constants/config';
-import { HOME, BLOG } from '@/constants/routes';
-import ProductsJson from '@/fixtures/products.json';
-import { IProduct } from '@/interfaces/cart-types';
-import BlogDetailLayout from '@/layouts/Blog/Detail';
-import { MainLayout } from '@/layouts/MainLayout';
-import { GetServerSideProps } from 'next';
-import { useTranslations } from 'next-intl';
-import collectionCategories from '@/fixtures/collectionCategories';
-import { checkExists } from '@/Util/helper';
-import React from 'react';
+import { Meta } from "@/components/Meta";
+import { AppConfig } from "@/constants/config";
+import { HOME, BLOG } from "@/constants/routes";
+import ProductsJson from "@/fixtures/products.json";
+import { IProduct } from "@/interfaces/cart-types";
+import BlogDetailLayout from "@/layouts/Documents/Detail";
+import { MainLayout } from "@/layouts/MainLayout";
+import { GetServerSideProps } from "next";
+import { useTranslations } from "next-intl";
+import collectionCategories from "@/fixtures/collectionCategories";
+import { checkExists } from "@/Util/helper";
+import React from "react";
 
 type Props = {
   slug: string;
@@ -17,15 +17,15 @@ type Props = {
 };
 
 const BlogPage: React.FC<Props> = ({ slug }) => {
-  const t = useTranslations('Category');
+  const t = useTranslations("Category");
 
   const breadcrumbs = [
     {
-      title: t('home'),
+      title: t("home"),
       url: HOME,
     },
     {
-      title: t('blog'),
+      title: t("blog"),
       url: BLOG,
     },
     {
@@ -33,15 +33,26 @@ const BlogPage: React.FC<Props> = ({ slug }) => {
     },
   ];
   return (
-    <MainLayout meta={<Meta title={AppConfig.title} description={AppConfig.description} />}>
+    <MainLayout
+      meta={
+        <Meta title={AppConfig.title} description={AppConfig.description} />
+      }
+    >
       <BlogDetailLayout breadcrumbs={breadcrumbs} />
     </MainLayout>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ params, locale }) => {
-  const checkSlugExist = checkExists(collectionCategories, '/blog/', params!.slug as string);
-  console.log(checkSlugExist)
+export const getServerSideProps: GetServerSideProps = async ({
+  params,
+  locale,
+}) => {
+  const checkSlugExist = checkExists(
+    collectionCategories,
+    "/blog/",
+    params!.slug as string
+  );
+  console.log(checkSlugExist);
 
   return {
     props: {
