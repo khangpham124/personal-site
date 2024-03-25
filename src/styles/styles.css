@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background: #000;
+}
+
 .swiper-button-prev::after,
 .swiper-button-next::after {
     color: #282828;
@@ -78,4 +82,8 @@ html {
     left: 0;
     padding: 0 20px;
     font-size: 12px;
+}
+
+#footer a {
+    color: #fff;
 }

@@ -1,16 +1,14 @@
-import { Meta } from '@/components/Meta';
-import { AppConfig } from '@/constants/config';
+import { Meta } from "@/components/Meta";
+import { AppConfig } from "@/constants/config";
 // import { HOME, PRODUCTS } from '@/constants/routes';
-import productCategories from '@/fixtures/productCategories';
-import ProductsJson from '@/fixtures/products.json';
-import { IProduct } from '@/interfaces/cart-types';
-import { MainLayout } from '@/layouts/MainLayout';
-import ProductDetailLayout from '@/layouts/Product/Detail';
-import { checkExists } from '@/Util/helper';
-import { GetServerSideProps } from 'next';
+import productCategories from "@/fixtures/productCategories";
+import ProductsJson from "@/fixtures/products.json";
+import { IProduct } from "@/interfaces/cart-types";
+import { MainLayout } from "@/layouts/MainLayout";
+import ProductDetailLayout from "@/layouts/Works/Detail";
+import { checkExists } from "@/Util/helper";
+import { GetServerSideProps } from "next";
 import { IProductStore } from "@/interfaces/customerProduct-service";
-
-
 
 type Props = {
   slug?: string;
@@ -20,19 +18,27 @@ type Props = {
 };
 
 const ProductDetailPage: React.FC<Props> = ({ product }: Props) => {
-  
-  
-
   return (
-    <MainLayout meta={<Meta title={AppConfig.title} description={AppConfig.description} />}>
+    <MainLayout
+      meta={
+        <Meta title={AppConfig.title} description={AppConfig.description} />
+      }
+    >
       <ProductDetailLayout />
     </MainLayout>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ params, locale }) => {
-  const checkSlugExist = checkExists(productCategories, `/products/${params!.category}/`, params!.slug as string);
-  console.log(checkSlugExist)
+export const getServerSideProps: GetServerSideProps = async ({
+  params,
+  locale,
+}) => {
+  const checkSlugExist = checkExists(
+    productCategories,
+    `/products/${params!.category}/`,
+    params!.slug as string
+  );
+  console.log(checkSlugExist);
   // if (!checkSlugExist) {
   //   return {
   //     notFound: true,
