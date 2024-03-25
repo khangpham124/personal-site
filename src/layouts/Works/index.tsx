@@ -6,55 +6,35 @@ import collection_img from "@/public/assets/products/collection-menu.png";
 import { HOME } from "@/constants/routes";
 // import { useArticlesByPost } from "@/hooks/useArticle";
 // import { ItemPost } from '@/services/articleServices';
-import CardBlog from "@/components/Card/CardBlog";
 
-import { postAPI } from "@/services/customerArticles";
+import { worksAPI } from "@/services/worksServices";
 import { IArticle } from "@/interfaces/customerArticles-service";
 
-function BlogLayout() {
+function DocumentLayout() {
   const t = useTranslations("Category");
-  const sevicesPostAPI = new postAPI();
+  const sevicesWorksAPI = new worksAPI();
   const [posts, setPosts] = useState<IArticle[]>([]);
 
-  const breadcrumbs = [
-    {
-      title: t("home"),
-      url: HOME,
-    },
-    {
-      title: t("blog"),
-    },
-  ];
-
   useEffect(() => {
-    sevicesPostAPI.getPostbyHomepage().then((res: any) => {
-      setPosts(res.data.data);
+    sevicesWorksAPI.getWorks().then((res: any) => {
+      console.log(res);
     });
   }, []);
 
   return (
     <Fragment>
       <div className="w-full flex flex-col justify-center items-center">
-        <Breadcrumb breadcrumbs={breadcrumbs} border />
         <div className="relative w-full flex justify-center items-center">
-          <Image
-            src={collection_img}
-            alt="Our Shop"
-            className="w-full"
-            loading="lazy"
-          />
-          <h3 className="absolute lg:text-[96px] md:text-[60px] text-[40px] text-white leading-[120px] font-italianno">
-            {t("blog")}
-          </h3>
+          ABC
         </div>
         <div className="w-full container flex-box">
-          {posts?.map((item: IArticle, index: number) => (
+          {/* {posts?.map((item: IArticle, index: number) => (
             <CardBlog key={`card-item-` + index} item={item} />
-          ))}
+          ))} */}
         </div>
       </div>
     </Fragment>
   );
 }
 
-export default BlogLayout;
+export default DocumentLayout;
