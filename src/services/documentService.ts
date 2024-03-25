@@ -87,39 +87,12 @@ export interface ItemCustomer {
 }
 
 
-export class profileAPI extends HttpClient {
-  public getCustomerProfile = async (): Promise<IResponse> => {
+export class documentAPI extends HttpClient {
+  public getDocuments= async (): Promise<IResponse> => {
       const response: IResponse = await this.instance
-          .get(`${API_PREFIX}/customers/profile`)
+          .get(`${API_PREFIX}/document`)
           .catch(catchAxiosError);
       return response;
   };
 
-  public getCustomerOrders = async (): Promise<IResponse> => {
-    const response: IResponse = await this.instance
-        .get(`${API_PREFIX}/customer/orders/me`)
-        .catch(catchAxiosError);
-    return response;
-  };
-
-  public addItemToWishList = async (payload:any): Promise<IResponse> => {
-    const response: IResponse = await this.instance
-        .post(`${API_PREFIX}/customer/wishlist/like`, payload)
-        .catch(catchAxiosError);
-    return response;
-  };
-
-  public removeItemFromWishList = async (payload:any): Promise<IResponse> => {
-    const response: IResponse = await this.instance
-        .post(`${API_PREFIX}/customer/wishlist/unlike`, payload)
-        .catch(catchAxiosError);
-    return response;
-  };
-
-  public getCustomerWishList = async (): Promise<IResponse> => {
-    const response: IResponse = await this.instance
-        .get(`${API_PREFIX}/customer/wishlist`)
-        .catch(catchAxiosError);
-    return response;
-  };
 }
