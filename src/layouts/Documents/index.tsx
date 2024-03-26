@@ -1,37 +1,52 @@
-import Breadcrumb from "@/components/Breadcrumb";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import React, { Fragment, useEffect, useState } from "react";
-import collection_img from "@/public/assets/products/collection-menu.png";
-import { HOME } from "@/constants/routes";
-// import { useArticlesByPost } from "@/hooks/useArticle";
-// import { ItemPost } from '@/services/articleServices';
-import CardBlog from "@/components/Card/CardBlog";
-
 import { documentAPI } from "@/services/documentService";
-import { IArticle } from "@/interfaces/customerArticles-service";
+import { searchAPI } from "@/services/searchService";
+// import { IArticle } from "@/interfaces/customerArticles-service";
 
 function DocumentLayout() {
   const t = useTranslations("Category");
   const sevicesdocumentAPI = new documentAPI();
-  const [posts, setPosts] = useState<IArticle[]>([]);
+  const sevicessearchAPI = new searchAPI();
+  const [posts, setPosts] = useState<any[]>([]);
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    sevicessearchAPI.getResults(searchValue).then((res: any) => {
+      // console.log(res.data);
+      setPosts(res.data);
+    });
+  };
+
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setSearchValue((e.target as HTMLInputElement).value);
+  };
 
   useEffect(() => {
     sevicesdocumentAPI.getDocuments().then((res: any) => {
-      console.log(res);
+      setPosts(res.data);
     });
   }, []);
 
   return (
     <Fragment>
-      <div className="w-full flex flex-col justify-center items-center">
-        <div className="relative w-full flex justify-center items-center">
-          ABC
+      <div className="mainContent flex">
+        <div className="relative w-full">
+          <form className="mt-2 " onSubmit={handleSubmit}>
+            <input
+              type="search"
+              placeholder={"Search document"}
+              className="px-4 py-2 w-full focus:outline-none"
+              onChange={handleChange}
+            />
+            <button type="submit">Seach</button>
+          </form>
         </div>
-        <div className="w-full container flex-box">
-          {/* {posts?.map((item: IArticle, index: number) => (
-            <CardBlog key={`card-item-` + index} item={item} />
-          ))} */}
+        <div className="w-full container">
+          {posts?.map((item: any, index: number) => (
+            <div key={`doc_${index}`}>{item.title.rendered}</div>
+          ))}
         </div>
       </div>
     </Fragment>

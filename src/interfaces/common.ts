@@ -1,3 +1,5 @@
+export const API_PREFIX = 'https://teddycoder.com/wp-json/wp/v2';
+
 export interface ServerResponse {
   success: boolean;
   totalPages: number;

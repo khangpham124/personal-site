@@ -4,20 +4,8 @@ import { IProduct } from './cart-types';
 
 
 export interface IArticle {
-  uuid: string,
-  titleVi: string,
-  titleEn: string,
-  descriptionEn: string,
-  descriptionVi: string,
-  contentEn: string,
-  contentVi: string,
-  slug: string,
-  type: number,
-  isShowWeb: true,
-  imageUrl: string,
-  createdAt: string,
-  createdBy: string,
-  data?:any[]
+  id: string,
+  title: string,
 }
 
 export interface IArticleStore {

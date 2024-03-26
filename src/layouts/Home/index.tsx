@@ -46,7 +46,8 @@ const HomeLayout = ({ products }: any) => {
     arrows: false,
     vertical: true,
     fade: true,
-    autoPlay: true,
+    autoplay: true,
+    autoplaySpeed: 2500,
     infinite: true,
     speed: 800,
     afterChange: () => {
@@ -221,7 +222,7 @@ const HomeLayout = ({ products }: any) => {
               alt="Our Shop"
             />
             <div className="warpText">
-              <div>
+              <div className="mb-4">
                 I'm<span className="squareText">Khang Pham</span>
               </div>
               <span className="innerText">WORK AS A LITTLE </span>
@@ -234,7 +235,7 @@ const HomeLayout = ({ products }: any) => {
               alt="Our Shop"
             />
             <div className="warpText">
-              <div>
+              <div className="mb-4">
                 I'm<span className="squareText">Khang Pham</span>
               </div>
               <span className="innerText">DESIGN AND</span>
@@ -247,7 +248,7 @@ const HomeLayout = ({ products }: any) => {
               alt="Our Shop"
             />
             <div className="warpText">
-              <div>
+              <div className="mb-4">
                 I'm<span className="squareText">Khang Pham</span>
               </div>
               <span className="innerText">AND NOW</span>
