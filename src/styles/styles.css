@@ -190,3 +190,14 @@ body {
     padding: 5px 10px;
     margin-left: 10px;
 }
+
+.input-page {
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid #424242;
+}
+
+.icon-search {
+    top: 25%;
+    right: 10px;
+}

@@ -16,4 +16,11 @@ export class searchAPI extends HttpClient {
       return response;
   };
 
+  public getContentResults= async (id: string): Promise<IResponse> => {
+    const response: IResponse = await this.instance
+        .get(`${API_PREFIX}/document/${id}`)
+        .catch(catchAxiosError);
+    return response;
+};
+
 }
