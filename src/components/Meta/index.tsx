@@ -41,6 +41,7 @@ const Meta = (props: IMetaProps) => {
           rel="stylesheet"
         ></link>
         <link rel="icon" href={`/assets/favicon.png`} key="favicon" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
       </Head>
       <NextSeo
         title={props.title}

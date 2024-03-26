@@ -148,3 +148,45 @@ body {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
+
+.innerText {
+    position: relative;
+    bottom: -40px;
+    transition: all 0.4s ease;
+}
+
+.innerText2 {
+    position: relative;
+    margin-left: 10px;
+    bottom: -40px;
+    transition: all 0.6s ease;
+}
+
+.start-anim {
+    bottom: 0;
+}
+
+.warpText--wrap {
+    position: relative;
+}
+
+.warpText {
+    overflow: hidden;
+    font-size: 2vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-weight: 700;
+    width: 80%;
+    text-align: center;
+}
+
+.squareText {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    font-weight: 500;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
