@@ -93,7 +93,7 @@ const HomeLayout = ({ products }: any) => {
 
   return (
     <>
-      <div id="teddy_slide" ref={container}>
+      <div id="teddy_slide">
         <div className={showAnim === true ? `anim` : `d-none`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
