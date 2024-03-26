@@ -14,7 +14,6 @@ import CartItem from "../CartItem/CartItem";
 import SearchForm from "../SearchForm/SearchForm";
 import styles from "./Header.module.css";
 import { MyLink } from "./MyLink";
-import Navigation from "./Navigation";
 import { useAuth } from "../../context/AuthContext";
 
 type Props = {
@@ -78,11 +77,6 @@ const MainMenu: React.FC<Props> = () => {
                 </Link>
               </div>
             </div>
-
-            {/* Left Nav */}
-            <ul className={`naviBar ${styles.leftMenu}`}>
-              <Navigation />
-            </ul>
           </div>
         </div>
       </nav>

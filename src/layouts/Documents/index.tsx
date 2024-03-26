@@ -1,37 +1,88 @@
-import Breadcrumb from "@/components/Breadcrumb";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import React, { Fragment, useEffect, useState } from "react";
-import collection_img from "@/public/assets/products/collection-menu.png";
-import { HOME } from "@/constants/routes";
-// import { useArticlesByPost } from "@/hooks/useArticle";
-// import { ItemPost } from '@/services/articleServices';
-import CardBlog from "@/components/Card/CardBlog";
-
 import { documentAPI } from "@/services/documentService";
-import { IArticle } from "@/interfaces/customerArticles-service";
+import { searchAPI } from "@/services/searchService";
+// import { IArticle } from "@/interfaces/customerArticles-service";
 
 function DocumentLayout() {
   const t = useTranslations("Category");
   const sevicesdocumentAPI = new documentAPI();
-  const [posts, setPosts] = useState<IArticle[]>([]);
+  const sevicessearchAPI = new searchAPI();
+  const [posts, setPosts] = useState<any[]>([]);
+  const [searchValue, setSearchValue] = useState("");
+  const [hasResult, setHasResult] = useState(false);
+  const [showSpin, setShowSpin] = useState(false);
+  const [contentPost, setContentPost] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setShowSpin(true);
+    sevicessearchAPI.getResults(searchValue).then((res: any) => {
+      setShowSpin(false);
+      setPosts(res.data);
+    });
+  };
+
+  const getContentPost = (id: string) => {
+    setShowSpin(true);
+    sevicessearchAPI.getContentResults(id).then((res: any) => {
+      setHasResult(true);
+      setShowSpin(false);
+      setContentPost(res.data.content.rendered);
+    });
+  };
+
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setSearchValue((e.target as HTMLInputElement).value);
+  };
 
   useEffect(() => {
     sevicesdocumentAPI.getDocuments().then((res: any) => {
-      console.log(res);
+      setPosts(res.data);
     });
   }, []);
 
   return (
     <Fragment>
-      <div className="w-full flex flex-col justify-center items-center">
-        <div className="relative w-full flex justify-center items-center">
-          ABC
+      <div className="mainContent flex justify-between">
+        <div className="relative w-2/6">
+          <form
+            className="mt-2 flex justify-between relative"
+            onSubmit={handleSubmit}
+          >
+            <input
+              type="search"
+              placeholder={"Search document"}
+              className="px-4 py-2 w-full focus:outline-none input-page"
+              onChange={handleChange}
+            />
+            <button type="submit" className="absolute icon-search">
+              <i className="fa fa-search" aria-hidden="true"></i>
+              {showSpin ? <i className="fa fa-spinner fa-spin mr-2"></i> : null}
+            </button>
+          </form>
+          <h1 className="heading--sub">Documents</h1>
         </div>
-        <div className="w-full container flex-box">
-          {/* {posts?.map((item: IArticle, index: number) => (
-            <CardBlog key={`card-item-` + index} item={item} />
-          ))} */}
+        <div className="w-3/5 overflow-y-auto">
+          {hasResult ? (
+            <div dangerouslySetInnerHTML={{ __html: contentPost }}></div>
+          ) : (
+            posts?.map((item: any, index: number) => (
+              <div
+                key={`doc_${index}`}
+                className={
+                  index > 0
+                    ? `mt-4 cursor-pointer item-result`
+                    : `cursor-pointer item-result`
+                }
+                onClick={() => {
+                  getContentPost(item.id);
+                }}
+              >
+                {item.title.rendered ? item.title.rendered : item.title}
+              </div>
+            ))
+          )}
         </div>
       </div>
     </Fragment>

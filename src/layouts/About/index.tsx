@@ -1,32 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
-import Input from "@/components/Input/Input";
-import Button from "@/components/Buttons/Button";
 import { useTranslations } from "next-intl";
 import React, { useState, useEffect, Fragment } from "react";
-import { documentAPI, ItemOrder, ItemMember } from "@/services/documentService";
-import { Tab } from "@headlessui/react";
-import classNames from "classnames";
-import Moment from "react-moment";
-import { IProductStore } from "@/interfaces/customerProduct-service";
-import Card from "@/components/Card/Card";
 
 const ProfileLayout = () => {
   // const router = useRouter();
-  const serviceDocumentAPI = new documentAPI();
+
   const t = useTranslations("Shopping_Cart");
-  const [profileCustomer, setProfileCustomer] = useState<ItemMember>();
-  const [ordesCustomer, setOrdesCustomer] = useState<ItemOrder[]>();
-  const [wishListCustomer, setWishListCustomer] = useState<IProductStore[]>();
-
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
 
   useEffect(() => {
     // serviceprofileAPI.getCustomerProfile().then((res: any) => {
@@ -58,7 +37,7 @@ const ProfileLayout = () => {
             results in a solution that meets the needs of your business within
             budget and on time.
           </p>
-          <h1 className="heading--1">About</h1>
+          <h1 className="heading--sub">Documents</h1>
         </div>
         <video width="400" autoPlay muted loop>
           <source
