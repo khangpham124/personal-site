@@ -50,7 +50,8 @@
         "react-tooltip": "^5.19.0",
         "sass": "^1.32.8",
         "slick-carousel": "^1.8.1",
-        "vivus": "^0.4.6"
+        "vivus": "^0.4.6",
+        "jquery": "^3.6.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.4.4",
