@@ -90,7 +90,7 @@ export interface ItemCustomer {
 export class documentAPI extends HttpClient {
   public getDocuments= async (): Promise<IResponse> => {
       const response: IResponse = await this.instance
-          .get(`${API_PREFIX}/document`)
+          .get(`${API_PREFIX}/works`)
           .catch(catchAxiosError);
       return response;
   };

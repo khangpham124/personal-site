@@ -2,7 +2,7 @@ import { Meta } from "@/components/Meta";
 import { AppConfig } from "@/constants/config";
 // import { HOME } from "@/constants/routes";
 import ProductsJson from "@/fixtures/products.json";
-import DocumentLayout from "@/layouts/Documents";
+import WorksLayout from "@/layouts/Works";
 import { MainLayout } from "@/layouts/MainLayout";
 import { GetServerSideProps } from "next";
 import { useTranslations } from "next-intl";
@@ -16,7 +16,7 @@ const DocumentsPage: React.FC = () => {
         <Meta title={AppConfig.title} description={AppConfig.description} />
       }
     >
-      <DocumentLayout />
+      <WorksLayout />
     </MainLayout>
   );
 };

@@ -9,19 +9,10 @@ export interface IResponse {
 }
 
 export class infoAPI extends HttpClient {
-  public getListWorks= async (): Promise<IResponse> => {
+  public getPageAboutResults= async (): Promise<IResponse> => {
       const response: IResponse = await this.instance
-          .get(`${API_PREFIX}/works?per_page=100`)
+          .get(`${API_PREFIX}/pages/296`)
           .catch(catchAxiosError);
       return response;
   };
-
-  public getThumbWork= async (url: string): Promise<IResponse> => {
-    const response: IResponse = await this.instance
-        .get(`${url}`)
-        .catch(catchAxiosError);
-    return response;
-};
-
-  
 };

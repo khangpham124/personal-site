@@ -7,11 +7,9 @@ import styles from "./Home.module.css";
 
 import { IProductStore } from "@/interfaces/customerProduct-service";
 import { useContentWeb } from "@/hooks/useContentWeb";
-import { useLastestCollections } from "@/hooks/useCollections";
 import { IArticle } from "@/interfaces/customerArticles-service";
 import Vivus from "vivus";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -33,8 +31,6 @@ const HomeLayout = ({ products }: any) => {
   const [flashTime, setFlashTime] = useState(null);
 
   const { data } = useContentWeb();
-
-  const collections = useLastestCollections();
 
   const [showAnim, setShowAnim] = useState(true);
   const container = useRef();

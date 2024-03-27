@@ -419,14 +419,6 @@ html {
     overflow-x: hidden;
 }
 
-.slick-next {
-    right: 25px !important;
-}
-
-.slick-prev {
-    left: 25px !important;
-}
-
 .flex-box {
     display: flex;
 }
@@ -505,42 +497,6 @@ html {
 
 .grid-10 {
     width: 10%;
-}
-
-.slick-arrow {
-    border: none;
-    background: rgba(251, 111, 127, 0.2) !important;
-    border-radius: 100%;
-    font-size: 0;
-    position: absolute;
-    z-index: 500;
-    outline: none;
-    width: 40px !important;
-    height: 40px !important;
-}
-
-.slick-next:before {
-    content: "" !important;
-    position: absolute;
-    right: 16px;
-    top: 33%;
-    width: 12px;
-    height: 12px;
-    border-left: 2px solid #fff;
-    border-top: 2px solid #fff;
-    transform: rotate(135deg);
-}
-
-.slick-prev:before {
-    content: "" !important;
-    position: absolute;
-    left: 16px;
-    top: 33%;
-    width: 12px;
-    height: 12px;
-    border-left: 2px solid #fff;
-    border-top: 2px solid #fff;
-    transform: rotate(-45deg);
 }
 
 .border-active {
