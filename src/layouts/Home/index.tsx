@@ -21,16 +21,8 @@ type ImagesIns = {
   id: number;
   img: string;
 };
-const HomeLayout = ({ products }: any) => {
+const HomeLayout = () => {
   const t = useTranslations("Index");
-
-  const [currentItems, setCurrentItems] = useState<IProductStore[]>(products);
-  const [flashSaleItems, setFlashSaleItems] =
-    useState<IProductStore[]>(products);
-  const [postHome, setPostHome] = useState<IArticle[]>([]);
-  const [flashTime, setFlashTime] = useState(null);
-
-  const { data } = useContentWeb();
 
   const [showAnim, setShowAnim] = useState(true);
   const container = useRef();

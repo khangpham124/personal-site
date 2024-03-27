@@ -1,25 +1,24 @@
-import { Meta } from '@/components/Meta';
-import { AppConfig } from '@/constants/config';
-import { IProduct } from '@/interfaces/cart-types';
-import HomeLayout from '@/layouts/Home';
-import { MainLayout } from '@/layouts/MainLayout';
-import { GetStaticProps } from 'next';
+import { Meta } from "@/components/Meta";
+import { AppConfig } from "@/constants/config";
+import { IProduct } from "@/interfaces/cart-types";
+import HomeLayout from "@/layouts/Home";
+import { MainLayout } from "@/layouts/MainLayout";
+import { GetStaticProps } from "next";
 // import ProductsJson from '@/fixtures/products.json';
-import React from 'react';
-import { useCustomerProducts } from "@/hooks/useCustomerProducts";
-
+import React from "react";
 
 type Props = {
   products: IProduct[];
 };
 
 const Home: React.FC<Props> = () => {
-  // const { data } = useCustomerProducts();
-  const { data } = useCustomerProducts();
-
   return (
-    <MainLayout meta={<Meta title={AppConfig.title} description={AppConfig.description} />}>
-      <HomeLayout products={data?.data || []} />
+    <MainLayout
+      meta={
+        <Meta title={AppConfig.title} description={AppConfig.description} />
+      }
+    >
+      <HomeLayout />
     </MainLayout>
   );
 };
