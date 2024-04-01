@@ -12,7 +12,7 @@ exports.modules = {
 /* harmony export */   "vU": () => (/* binding */ API_PREFIX)
 /* harmony export */ });
 /* unused harmony exports ORDERS_BASE_URL, SHIPPING_BASE_URL */
-const API_PREFIX = "https://teddycoder.com/wp-json/wp/v2";
+const API_PREFIX = "https://api.teddycoder.com/wp-json/wp/v2";
 const ORDERS_BASE_URL = (/* unused pure expression or super */ null && (`/customer/orders`));
 const SHIPPING_BASE_URL = `${API_PREFIX}/external/ghn`;
 

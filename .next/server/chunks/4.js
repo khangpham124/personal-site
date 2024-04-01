@@ -2091,7 +2091,7 @@ const MainMenu = ()=>{
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     className: "w-[182px]",
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                        src: `https://teddycoder.com/assets/img/header/logo.svg`,
+                                        src: `https://api.teddycoder.com/assets/img/header/logo.svg`,
                                         alt: "Our Shop"
                                     })
                                 })

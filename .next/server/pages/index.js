@@ -201,7 +201,7 @@ const HomeLayout = ()=>{
                             className: "warpText--wrap",
                             children: [
                                 /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                                    src: `https://teddycoder.com/assets/img/top/coder1.jpg`,
+                                    src: `https://api.teddycoder.com/assets/img/top/coder1.jpg`,
                                     alt: "Our Shop"
                                 }),
                                 /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -233,7 +233,7 @@ const HomeLayout = ()=>{
                             className: "warpText--wrap",
                             children: [
                                 /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                                    src: `https://teddycoder.com/assets/img/top/coder3.jpg`,
+                                    src: `https://api.teddycoder.com/assets/img/top/coder3.jpg`,
                                     alt: "Our Shop"
                                 }),
                                 /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -265,7 +265,7 @@ const HomeLayout = ()=>{
                             className: "warpText--wrap",
                             children: [
                                 /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                                    src: `https://teddycoder.com/assets/img/top/coder2.jpg`,
+                                    src: `https://api.teddycoder.com/assets/img/top/coder2.jpg`,
                                     alt: "Our Shop"
                                 }),
                                 /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {

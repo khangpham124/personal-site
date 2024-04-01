@@ -206,7 +206,7 @@ const HomeLayout = () => {
         >
           <div key={`slide_1`} className="warpText--wrap">
             <img
-              src={`https://teddycoder.com/assets/img/top/coder1.jpg`}
+              src={`https://api.teddycoder.com/assets/img/top/coder1.jpg`}
               alt="Our Shop"
             />
             <div className="warpText">
@@ -219,7 +219,7 @@ const HomeLayout = () => {
           </div>
           <div key={`slide_1`} className="warpText--wrap">
             <img
-              src={`https://teddycoder.com/assets/img/top/coder3.jpg`}
+              src={`https://api.teddycoder.com/assets/img/top/coder3.jpg`}
               alt="Our Shop"
             />
             <div className="warpText">
@@ -232,7 +232,7 @@ const HomeLayout = () => {
           </div>
           <div key={`slide_1`} className="warpText--wrap">
             <img
-              src={`https://teddycoder.com/assets/img/top/coder2.jpg`}
+              src={`https://api.teddycoder.com/assets/img/top/coder2.jpg`}
               alt="Our Shop"
             />
             <div className="warpText">

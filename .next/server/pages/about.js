@@ -59,7 +59,7 @@ const ProfileLayout = ()=>{
                     muted: true,
                     loop: true,
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("source", {
-                        src: "https://teddycoder.com/assets/walk.MP4",
+                        src: "https://api.teddycoder.com/assets/walk.MP4",
                         type: "video/mp4"
                     })
                 })
