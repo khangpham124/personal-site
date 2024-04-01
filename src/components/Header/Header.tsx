@@ -24,11 +24,7 @@ const Header: React.FC<Props> = () => {
       {/* <TopNav /> */}
 
       {/* ===== Main Navigation ===== */}
-      {size.width > 1024 ? (
-        <MainMenu isMobile={isMobile} />
-      ) : (
-        <MenuMobile isMobile={isMobile} />
-      )}
+      <MainMenu isMobile={isMobile} />
     </>
   );
 };

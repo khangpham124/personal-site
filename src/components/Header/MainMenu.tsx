@@ -70,7 +70,7 @@ const MainMenu: React.FC<Props> = () => {
                 <Link href="/">
                   <a className="w-[182px]">
                     <img
-                      src={`https://api.teddycoder.com/assets/img/header/logo.svg`}
+                      src={`https://teddycoder.click/assets/img/header/logo.svg`}
                       alt="Our Shop"
                     />
                   </a>

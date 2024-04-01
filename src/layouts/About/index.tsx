@@ -23,7 +23,7 @@ const ProfileLayout = () => {
         </div>
         <video width="400" autoPlay muted loop>
           <source
-            src="https://api.teddycoder.com/assets/walk.MP4"
+            src="https://teddycoder.click/assets/walk.MP4"
             type="video/mp4"
           ></source>
         </video>
