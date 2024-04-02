@@ -6,8 +6,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 
 import slide_1 from "@/public/assets/slide/coder1.jpeg";
-import slide_2 from "@/public/assets/slide/coder1.jpeg";
-import slide_3 from "@/public/assets/slide/coder1.jpeg";
+import slide_2 from "@/public/assets/slide/coder2.jpeg";
+import slide_3 from "@/public/assets/slide/coder3.jpeg";
 
 import Vivus from "vivus";
 import Slider from "react-slick";
