@@ -568,6 +568,10 @@ button {
     display: none;
 }
 
+.z-1000 {
+    z-index: 1000;
+}
+
 @keyframes animateArrow {
     50% {
         right: -50px;

@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 
-export const API_PREFIX = 'https://teddycoder.click/wp-json/wp/v2';
+export const API_PREFIX = 'http://teddycoder.click/wp-json/wp/v2';
 export const ORDERS_BASE_URL = `/customer/orders`;
 export const SHIPPING_BASE_URL = `${API_PREFIX}/external/ghn`;
 

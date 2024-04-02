@@ -36,14 +36,19 @@ function WorksLayout() {
   useEffect(() => {
     sevicesWorksAPI.getListWorks().then((res: any) => {
       const allWorks = res.data;
+      console.log(allWorks);
       let arryWorks: [any?] = [];
       let mediaIds: [any?] = [];
 
       allWorks?.map((item: any) => {
+        // const thumb = item.acf?.thumb;
         const items = {
           title: item.title.rendered,
           link: item.acf.url,
-          thumb: item.acf.thumb,
+          thumb: item.acf?.thumb?.replace(
+            "http://teddycoder.com/",
+            "http://teddycoder.click/"
+          ),
           content: item.content.rendered,
         };
         arryWorks.push(items);

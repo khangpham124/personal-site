@@ -6,9 +6,9 @@ const token = getCookie('token')
 export default abstract class HttpClient {
   protected readonly instance: AxiosInstance;
 
-  constructor(baseURL?: string) {
+  constructor() {
     this.instance = axios.create({
-      baseURL,
+      // baseURL,
       headers: {
         'content-type': 'application/json'
       },
@@ -23,7 +23,7 @@ export default abstract class HttpClient {
     this.instance.interceptors.request.use(async (config : any) => {
       // is development mode
       // if (process.env.NODE_ENV === 'development') {
-        config.headers.Authorization = `Bearer ${token}`;
+        // config.headers.Authorization = `Bearer ${token}`;
         return config;
       // }
     });

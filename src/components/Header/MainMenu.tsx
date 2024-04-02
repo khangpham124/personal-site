@@ -23,10 +23,20 @@ type Props = {
 const MainMenu: React.FC<Props> = () => {
   const auth = useAuth();
   const t = useTranslations("Navigation");
+  const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [didMount, setDidMount] = useState<boolean>(false); // to disable Can't perform a React state Warning
   const router = useRouter();
-  const { asPath, locale } = router;
+  // const { asPath, locale } = router;
+
+  const handleToggleMenu = () => {
+    setToggleMenu(!toggleMenu);
+    // if (!toggleMenu) {
+    //   document.body.style.overflow = "hidden";
+    // } else {
+    //   document.body.style.overflow = "auto";
+    // }
+  };
 
   const handleScroll = useCallback(() => {
     const offset = window.scrollY;
@@ -63,20 +73,45 @@ const MainMenu: React.FC<Props> = () => {
         )}
       >
         <div className="w-full flex items-center justify-between h-full">
-          <div className={`w-full flex justify-between align-baseline h-full`}>
-            {/* Ju Logo */}
-            <div className="flex-1 flex justify-start cursor-pointer">
-              <div className="w-[182px] flex items-center">
-                <Link href="/">
-                  <a className="w-[182px]">
-                    <img
-                      src={`https://teddycoder.click/assets/img/header/logo.svg`}
-                      alt="Our Shop"
-                    />
-                  </a>
-                </Link>
+          <div className="flex justify-between relative z-1000 w-full">
+            <Link href="/">
+              <a className="logo-headder relative">
+                <img
+                  src={`http://teddycoder.click/assets/img/header/logo.svg`}
+                  alt="Our Shop"
+                />
+                <span className="dot"></span>
+              </a>
+            </Link>
+            <div
+              className={`hamburger hamburger--slider ${
+                toggleMenu ? `is-active` : ``
+              }`}
+            >
+              <div className="hamburger-box" onClick={handleToggleMenu}>
+                <div className="hamburger-inner"></div>
               </div>
             </div>
+          </div>
+
+          <div className={`naviBar ${toggleMenu ? `active` : ``}`}>
+            <ul>
+              <li className="menu1">
+                <a href="https://teddycoder.com/">HOME</a>
+              </li>
+              <li className="menu2">
+                <a href="/about/">ABOUT</a>
+              </li>
+              <li className="menu3">
+                <a href="/works/">WORKS</a>
+              </li>
+              <li className="menu4">
+                <a href="/documents/">DOCUMENT</a>
+              </li>
+              <li className="menu5">
+                <a href="/contact/">CONTACT</a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
