@@ -1,7 +1,6 @@
 import ArrowDownIcon from "@/public/assets/icons/ArrowDownIcon";
 import USER_ICON from "@/public/assets/icons/icon_user.png";
 
-import LOGO from "@/public/assets/logo-ju.png";
 import { Menu } from "@headlessui/react";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
@@ -15,6 +14,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import styles from "./Header.module.css";
 import { MyLink } from "./MyLink";
 import { useAuth } from "../../context/AuthContext";
+import logo from "@/public/assets/logo.svg";
 
 type Props = {
   isMobile: boolean;
@@ -76,10 +76,7 @@ const MainMenu: React.FC<Props> = () => {
           <div className="flex justify-between relative z-1000 w-full">
             <Link href="/">
               <a className="logo-headder relative">
-                <img
-                  src={`https://teddycoder.click/assets/img/header/logo.svg`}
-                  alt="Our Shop"
-                />
+                <Image src={logo} alt="Teddycoder" />
                 <span className="dot"></span>
               </a>
             </Link>

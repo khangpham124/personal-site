@@ -5,9 +5,10 @@ import React, { useEffect, useState } from "react";
 
 import styles from "./Home.module.css";
 
-import { IProductStore } from "@/interfaces/customerProduct-service";
-import { useContentWeb } from "@/hooks/useContentWeb";
-import { IArticle } from "@/interfaces/customerArticles-service";
+import slide_1 from "@/public/assets/slide/coder1.jpeg";
+import slide_2 from "@/public/assets/slide/coder1.jpeg";
+import slide_3 from "@/public/assets/slide/coder1.jpeg";
+
 import Vivus from "vivus";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -205,10 +206,7 @@ const HomeLayout = () => {
           {...settings}
         >
           <div key={`slide_1`} className="warpText--wrap">
-            <img
-              src={`https://teddycoder.click/assets/img/top/coder1.jpg`}
-              alt="Our Shop"
-            />
+            <Image src={slide_1} alt="Frontend Developer" />
             <div className="warpText">
               <div className="mb-4">
                 I'm<span className="squareText">Khang Pham</span>
@@ -218,10 +216,7 @@ const HomeLayout = () => {
             </div>
           </div>
           <div key={`slide_1`} className="warpText--wrap">
-            <img
-              src={`https://teddycoder.click/assets/img/top/coder3.jpg`}
-              alt="Our Shop"
-            />
+            <Image src={slide_2} alt="Frontend Developer" />
             <div className="warpText">
               <div className="mb-4">
                 I'm<span className="squareText">Khang Pham</span>
@@ -231,10 +226,7 @@ const HomeLayout = () => {
             </div>
           </div>
           <div key={`slide_1`} className="warpText--wrap">
-            <img
-              src={`https://teddycoder.click/assets/img/top/coder2.jpg`}
-              alt="Our Shop"
-            />
+            <Image src={slide_3} alt="Frontend Developer" />
             <div className="warpText">
               <div className="mb-4">
                 I'm<span className="squareText">Khang Pham</span>

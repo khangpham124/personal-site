@@ -10,7 +10,7 @@ const ProfileLayout = () => {
   const [info, setInfo] = useState<any[]>([]);
   useEffect(() => {
     sevicesInfoAPI.getPageAboutResults().then((res: any) => {
-      setInfo(res.data.content.rendered);
+      setInfo(res.data?.content.rendered);
     });
   }, []);
 

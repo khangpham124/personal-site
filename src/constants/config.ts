@@ -1,6 +1,6 @@
 export const AppConfig = {
-  site_name: 'test',
+  site_name: 'TeddyCoder',
   title: 'TeddyCoder',
-  description: 'Ju Clothing',
+  description: 'TeddyCoder',
   locale: 'vi',
 };
