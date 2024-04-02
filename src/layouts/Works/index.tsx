@@ -47,7 +47,7 @@ function WorksLayout() {
           link: item.acf.url,
           thumb: item.acf?.thumb?.replace(
             "http://teddycoder.com/",
-            "http://teddycoder.click/"
+            "https://teddycoder.click/"
           ),
           content: item.content.rendered,
         };

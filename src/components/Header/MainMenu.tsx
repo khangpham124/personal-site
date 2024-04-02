@@ -77,7 +77,7 @@ const MainMenu: React.FC<Props> = () => {
             <Link href="/">
               <a className="logo-headder relative">
                 <img
-                  src={`http://teddycoder.click/assets/img/header/logo.svg`}
+                  src={`https://teddycoder.click/assets/img/header/logo.svg`}
                   alt="Our Shop"
                 />
                 <span className="dot"></span>
